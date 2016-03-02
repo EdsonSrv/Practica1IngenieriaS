@@ -1,0 +1,53 @@
+﻿-- Database: postgres
+
+-- DROP DATABASE postgres;
+
+CREATE DATABASE postgres
+  WITH OWNER = postgres
+       ENCODING = 'UTF8'
+       TABLESPACE = pg_default
+       LC_COLLATE = 'es_MX.UTF-8'
+       LC_CTYPE = 'es_MX.UTF-8'
+       CONNECTION LIMIT = -1;
+
+COMMENT ON DATABASE postgres
+  IS 'default administrative connection database';
+
+-- Table: estudiante
+
+-- DROP TABLE estudiante;
+
+CREATE TABLE estudiante
+(
+  "numCuentaEst" numeric NOT NULL,
+  "nombreEst" text,
+  materias text,
+  CONSTRAINT estudiante_pkey PRIMARY KEY ("numCuentaEst" )
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE estudiante
+  OWNER TO postgres;
+COMMENT ON TABLE estudiante
+  IS 'Estudiante de universidad';
+
+-- Table: usuario
+
+-- DROP TABLE usuario;
+
+CREATE TABLE usuario
+(
+  "idUsuario" numeric NOT NULL,
+  contrasena text NOT NULL,
+  correo text NOT NULL,
+  "numCuenta" numeric NOT NULL,
+  CONSTRAINT usuario_pkey PRIMARY KEY ("idUsuario" )
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE usuario
+  OWNER TO postgres;
+COMMENT ON TABLE usuario
+  IS 'Tabla con informacion de un usuario ';
