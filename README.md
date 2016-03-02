@@ -8,3 +8,7 @@ Cuestionario:
 -¿Como se llaman los archivos de configuraciones de Hibernate, tuviste alguna
 
 dificultad con la configuración de estos?
+
+
+Suposiciones para el diseño del modelo:
+
