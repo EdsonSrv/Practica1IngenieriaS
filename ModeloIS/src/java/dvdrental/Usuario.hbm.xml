@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2/03/2016 07:35:47 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="dvdrental.Usuario" table="usuario" schema="public" optimistic-lock="version">
+        <comment>Tabla con informacion de un usuario</comment>
+        <id name="idUsuario" type="big_decimal">
+            <column name="idUsuario" precision="131089" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="contrasena" type="string">
+            <column name="contrasena" not-null="true" />
+        </property>
+        <property name="correo" type="string">
+            <column name="correo" not-null="true" />
+        </property>
+        <property name="numCuenta" type="big_decimal">
+            <column name="numCuenta" precision="131089" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
